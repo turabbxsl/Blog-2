@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Məqalə Əlavə Et";
+}
+
+<form action="/Meqale/Ekle" method="post" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>Başlıq :</td>
+            <td><input type="text" name="baslig" value=" " /></td>
+        </tr>
+
+        <tr>
+            <td>İçərik :</td>
+            <td><input type="text" name="icerik" value=" " /></td>
+        </tr>
+
+        <tr>
+            <td>Kategoriyasi :</td>
+            <td>
+                <select name="kategoriyaid">
+                    @foreach (Blogsayti.Models.kategoriya ktg in ViewBag.Kategoriyalar)
+                    {
+                        <option value="@ktg.kategoriyaid">@ktg.adi</option>
+                    }
+                </select>
+            </td>
+        </tr>
+
+        
+        <tr>
+            
+            <td>Şəkil :</td>
+            <td>
+                <input type="file" name="resm" value=" "/>
+            </td>
+            
+        </tr>
+
+        <tr>
+            <td></td>
+            
+
+            <td>
+                <input type="submit" name="name" value="Əlavə Et" />
+            </td>
+        </tr>
+
+    </table>
+</form>

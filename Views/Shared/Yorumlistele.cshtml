@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Blogsayti.Models.yorum>
+
+@foreach (var item in Model)
+{
+    @Html.DisplayFor(x => item.meqale.kullanici.kullaniciadi)
+    <br />
+    <br />
+    @Html.DisplayFor(x => item.yorum1)
+    <br />
+    <br />
+    @Html.DisplayFor(x => item.eklenmetarixi)
+    <br />
+    <br />
+    if (item.meqale.kullanici.kullaniciadi == Session["istifadeci"].ToString())
+    {
+        <p>
+            @Html.ActionLink("Guncelle", "Yorumguncelle", new { id = item.yorumid })
+            @Html.ActionLink("Sil", "Yorumsil", new { id = item.yorumid });
+        </p>
+    }
+
+}

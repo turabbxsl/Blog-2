@@ -1,0 +1,143 @@
+﻿
+@{
+    ViewBag.Title = Model.baslig;
+}
+@model Blogsayti.Models.meqale
+
+@section head{
+    <script src="~/Content/s/style2/js/jQuery2.1.3.js"></script>
+    <script>
+        $(document).ready(function myfunction() {
+            function Goruntulendi(id) {
+                var link = "/Meqale/Goruntulendi" + id;
+                $.ajax({
+                    type: "GET",
+                    url: link,
+
+                    
+                }); 
+            };
+        });
+    </script>
+}
+
+
+
+
+
+<div class="blog-posts classic-blog single">
+    <div class="post format-image">
+        <div class="meta">
+            <span class="date">@Model.eklenmetarixi</span>
+            <span class="categories">
+                <a href="/Kategoriya/Index/@Model.kategoriyaid">@Model.kategoriya.adi</a>,
+
+            </span>
+            <span class="comments">
+                <a href="#yorum">@Model.yorums.Count <i class="icon-chat-1"></i></a>
+            </span>
+        </div>
+        <h1 class="post-title">@Model.baslig</h1>
+        <figure class="main">
+            <img src="@Model.resm.boyukolculu" alt="" />
+        </figure>
+        <div class="post-content">
+            <p>
+                @Model.icerik
+            </p>
+            <div class="meta tags">
+
+                @if (Model.etikets != null)
+                {
+                    foreach (Blogsayti.Models.etiket etk in Model.etikets)
+                    {
+                        <a href="/Etiket/Index/@etk.etiketid">@etk.adi</a>
+                    }
+                }
+
+            </div>
+            <div class="click-share">
+                <ul>
+                    <li><a class="btn share-facebook" href="#">Beyen</a></li>
+                    <li><a class="btn share-twitter" href="#">Tweet</a></li>
+                    <li><a class="btn share-pinterest" href="#">Pin it</a></li>
+                </ul>
+            </div>
+            <!-- /.share-links -->
+
+        </div>
+    </div>
+    <!-- /.post -->
+
+</div>
+<!-- /.blog-posts -->
+
+<div class="about-author dark-wrapper">
+        <div class="author-image"> <img alt="" src="@Model.kullanici.resm.ortaolculu" /> </div>
+        <div class="author-details">
+            <h3>Yazıçı @Model.kullanici.adi @Model.kullanici.soyadi Haqqında</h3>
+            <p>@Model.kullanici.aciglama</p>
+            <ul class="social">
+                <li><a href="#"><i class="icon-s-twitter"></i></a></li>
+                <li><a href="#"><i class="icon-s-facebook"></i></a></li>
+                <li><a href="#"><i class="icon-s-pinterest"></i></a></li>
+                <li><a href="#"><i class="icon-s-dribbble"></i></a></li>
+                <li><a href="#"><i class="icon-s-linkedin"></i></a></li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+<div class="divide100"></div>
+
+<a id="yorum" />
+<div id="comments">
+    <h3>@Model.yorums.Count</h3>
+    <ol id="singlecomments" class="commentlist">
+
+        @foreach (Blogsayti.Models.yorum yrm in Model.yorums)
+        {
+            <li>
+                <div class="comment-wrapper">
+                    <div class="user"><img alt="" src="/Content/s/image/defaultUser.png" class="avatar" /></div>
+                    <div class="message">
+                        <div class="arrow-box">
+                            <div class="info">
+                                <h2><a href="#">@yrm.adsoyad</a></h2>
+                                <div class="meta">
+                                    <span class="date">@yrm.eklenmetarixi.Value.ToShortDateString()</span>
+                                </div>
+                            </div>
+                            <p>@yrm.yorum1</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        }
+
+    </ol>
+</div>
+<!-- /#comments -->
+<div class="divide100"></div>
+<div class="comment-form-wrapper">
+    <h3>Fikrivizi Bildirmək İstəyirsiniz mi?</h3>
+    <p>E-Mail Adresiniz Yayınlanmayacaqdır.Mecburi yerler * ilə işarətlənmişdir.</p>
+    <form class="comment-form" name="form_name" action="/Meqale/Yorumyaz/@Model.meqaleid" method="post">
+        <div class="name-field">
+            <label><i class="icon-user"></i></label>
+            <input type="text" name="isim" placeholder="Ad Soyad *" />
+        </div>
+        <div class="email-field">
+            <label><i class="icon-mail-alt"></i></label>
+            <input type="text" name="email" placeholder="Email *" />
+        </div>
+        <div class="website-field">
+            <label><i class="icon-globe"></i></label>
+            <input type="text" name="website" placeholder="Website" />
+        </div>
+        <div class="message-field">
+            <textarea name="Yorum" id="textarea" rows="5" cols="30" placeholder="Yorumunuz..."></textarea>
+        </div>
+        <input type="submit" value="Submit" name="submit" class="btn btn-submit" />
+    </form>
+</div>

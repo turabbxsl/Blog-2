@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Blogsayti.Models.meqale>
+
+<div class="sidebox widget">
+
+    <h3 class="widget-title section-title">Populyar Məqalələr</h3>
+    <ul class="post-list">
+
+        @foreach (Blogsayti.Models.meqale mql in Model)
+        {
+            <li>
+                <div class="icon-overlay"> <a href="/Meqale/Detay/@mql.meqaleid"><img src="@mql.resm.kicikolculu" alt="" /> </a> </div>
+                <div class="meta">
+                    <h5><a href="/Meqale/Detay/@mql.meqaleid">@mql.baslig</a></h5>
+                    <em>@mql.eklenmetarixi.ToShortDateString()<span class="comments"><a href="#">@mql.yorums.Count <i class="icon-chat-1"></i></a></span></em>
+                </div>
+            </li>
+        }
+
+    </ul>
+  
+</div>

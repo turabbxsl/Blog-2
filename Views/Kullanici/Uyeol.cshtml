@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Üzv Ol";
+}
+
+<form action="/Kullanici/Uyeol" method="post">
+    <table>
+        <tr>
+            <td>Adi :</td>
+            <td>
+                <input type="text" name="adi" value=" " />
+            </td>
+        </tr>
+
+        <tr>
+            <td>Soyadi :</td>
+            <td>
+                <input type="text" name="soyadi" value=" " />
+            </td>
+        </tr>
+
+        <tr>
+            <td>Istifadeci Adi :</td>
+            <td>
+                <input type="text" name="kullaniciadi" value=" " />
+            </td>
+        </tr>
+
+        <tr>
+            <td>Sifre :</td>
+            <td>
+                <input type="password" name="parol" value=" " />
+            </td>
+        </tr>
+
+        <tr>
+            <td>E-Mail :</td>
+            <td>
+                <input type="text" name="mailadresi" value=" " />
+            </td>
+        </tr>
+
+        <tr>
+            <td>Cinsiyyet :</td>
+            <td>
+                <input type="radio" name="rdman" value="" />
+                <span>Bəy</span>
+                <input type="radio" name="rdwoman" value="" />
+                <span>Xanım</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Dogum</td>
+            <td>
+                <input type="date" name="dogumtarixi" value="" />
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" name="name" value="Üzv Ol" />
+            </td>
+        </tr>
+    </table>
+</form>

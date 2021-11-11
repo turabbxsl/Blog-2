@@ -1,0 +1,90 @@
+﻿
+@{
+    Layout = null;
+}
+<script src="~/Content/s/style2/js/jquery.min.js"></script>
+
+<script>
+
+    $(document).ready(function myfunction() {
+        $("a.begen").click(function myfunction() {
+            var id = $(this).data("id");
+            var link = "/Meqale/Begen/" + id;
+            $.ajax({
+                type: "GET",
+                url: link,
+                success: function (result) {
+                    $("a.begen").html(result);
+                }
+            });
+        })
+    })
+
+</script>
+
+
+
+
+
+
+@model IEnumerable<Blogsayti.Models.meqale>
+
+
+@helper IcerikQisalt(string icerik)
+{
+
+    if (icerik.Length > 300)
+    {
+        @icerik.Substring(0, 300);
+    }
+    else
+    {
+        @icerik;
+    }
+
+
+}
+
+
+
+<div class="blog-posts col-blog">
+
+    @foreach (Blogsayti.Models.meqale meqale in Model)
+    {
+        <div class="post row">
+            <div class="col-sm-4">
+                <figure>
+                    <a href="/Meqale/Detay/@meqale.meqaleid">
+                        <div class="text-overlay">
+                            <div class="info"><span>Hamısını Oxu</span></div>
+                        </div>
+                        <img src="@meqale.resm.ortaolculu" alt="" />
+                    </a>
+                </figure>
+            </div>
+            <div class="col-sm-8 post-content">
+                <div class="meta">
+                    <span class="date">@meqale.eklenmetarixi.ToShortDateString()</span><span class="comments"><a href="#">@meqale.yorums.Count <i class="icon-chat-1"></i></a></span>
+                    @if (Session["istifadeci"] != null || Session["admin"] != null)
+                    {
+                        <span>
+                            <span>LIKE</span>
+
+                            <a href="javascript:void(0);" class="begen" data-id="@meqale.meqaleid">@meqale.begenme <img src="~/Content/s/image/heart.png" /></a>
+
+                        </span>
+                    }
+
+
+                    <span>
+                        <a href="#">@meqale.goruntulenmesayi <img src="~/Content/s/image/vision.png" /></a>
+                    </span>
+
+                </div>
+                <h2 class="post-title"><a href="/Meqale/Detay/@meqale.meqaleid">@meqale.baslig</a></h2>
+                <p>@IcerikQisalt(meqale.icerik)</p>
+            </div>
+        </div>
+    }
+
+</div>

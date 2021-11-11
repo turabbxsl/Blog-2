@@ -1,0 +1,463 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8F0FEE83-F7E9-4E0C-91AC-39C7A9B424EA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Blogsayti</RootNamespace>
+    <AssemblyName>Blogsayti</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\s\blog-post.html" />
+    <Content Include="Content\s\blog.html" />
+    <Content Include="Content\s\image\defaultUser.png" />
+    <Content Include="Content\s\image\disslike.png" />
+    <Content Include="Content\s\image\heart.png" />
+    <Content Include="Content\s\image\kalp.png" />
+    <Content Include="Content\s\image\like.png" />
+    <Content Include="Content\s\image\vision.png" />
+    <Content Include="Content\s\MakaleResim\BuyukBoyut\csharp.jpg" />
+    <Content Include="Content\s\MakaleResim\BuyukBoyut\iphone6-select-2014.jpg" />
+    <Content Include="Content\s\MakaleResim\BuyukBoyut\texnologiya.jpg" />
+    <Content Include="Content\s\MakaleResim\KucukBoyut\c.png" />
+    <Content Include="Content\s\MakaleResim\KucukBoyut\iphone6-select-2014.jpg" />
+    <Content Include="Content\s\MakaleResim\KucukBoyut\texnologiya.jpg" />
+    <Content Include="Content\s\MakaleResim\OrtaBoyut\cOrta.jpg" />
+    <Content Include="Content\s\MakaleResim\OrtaBoyut\texnologiya.jpg" />
+    <Content Include="Content\s\style2\css\blank.html" />
+    <Content Include="Content\s\style2\css\bootstrap.min.css" />
+    <Content Include="Content\s\style2\css\color\red.css" />
+    <Content Include="Content\s\style2\css\fancybox_loading%402x.html" />
+    <Content Include="Content\s\style2\css\fancybox_loading.html" />
+    <Content Include="Content\s\style2\css\fancybox_overlay.html" />
+    <Content Include="Content\s\style2\css\fancybox_sprite%402x.html" />
+    <Content Include="Content\s\style2\css\fancybox_sprite.html" />
+    <Content Include="Content\s\style2\css\images\closedhand.html" />
+    <Content Include="Content\s\style2\css\images\openhand.html" />
+    <Content Include="Content\s\style2\css\plugins.css" />
+    <Content Include="Content\s\style2\css\slider-pro.css" />
+    <Content Include="Content\s\style2\fonts\glyphicons-halflings-regular-2.html" />
+    <Content Include="Content\s\style2\fonts\glyphicons-halflings-regular-3.html" />
+    <Content Include="Content\s\style2\fonts\glyphicons-halflings-regular-4.html" />
+    <Content Include="Content\s\style2\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="Content\s\style2\fonts\glyphicons-halflings-regulard41d.html" />
+    <Content Include="Content\s\style2\images\art\a1.jpg" />
+    <Content Include="Content\s\style2\images\art\a2.jpg" />
+    <Content Include="Content\s\style2\images\art\a3.jpg" />
+    <Content Include="Content\s\style2\images\art\about.jpg" />
+    <Content Include="Content\s\style2\images\art\author.jpg" />
+    <Content Include="Content\s\style2\images\art\b1-full.jpg" />
+    <Content Include="Content\s\style2\images\art\b1.jpg" />
+    <Content Include="Content\s\style2\images\art\b2.jpg" />
+    <Content Include="Content\s\style2\images\art\b3.jpg" />
+    <Content Include="Content\s\style2\images\art\b4.jpg" />
+    <Content Include="Content\s\style2\images\art\b5.jpg" />
+    <Content Include="Content\s\style2\images\art\bs-1.jpg" />
+    <Content Include="Content\s\style2\images\art\bs-2.jpg" />
+    <Content Include="Content\s\style2\images\art\bs-3.jpg" />
+    <Content Include="Content\s\style2\images\art\p1-full.jpg" />
+    <Content Include="Content\s\style2\images\art\p1.jpg" />
+    <Content Include="Content\s\style2\images\art\p10-full.jpg" />
+    <Content Include="Content\s\style2\images\art\p10.jpg" />
+    <Content Include="Content\s\style2\images\art\p11-full.jpg" />
+    <Content Include="Content\s\style2\images\art\p11.jpg" />
+    <Content Include="Content\s\style2\images\art\p12-full.jpg" />
+    <Content Include="Content\s\style2\images\art\p12.jpg" />
+    <Content Include="Content\s\style2\images\art\p14.jpg" />
+    <Content Include="Content\s\style2\images\art\p15.jpg" />
+    <Content Include="Content\s\style2\images\art\p16.jpg" />
+    <Content Include="Content\s\style2\images\art\p2-full.jpg" />
+    <Content Include="Content\s\style2\images\art\p2.jpg" />
+    <Content Include="Content\s\style2\images\art\p3-full.jpg" />
+    <Content Include="Content\s\style2\images\art\p3.jpg" />
+    <Content Include="Content\s\style2\images\art\p4-full.jpg" />
+    <Content Include="Content\s\style2\images\art\p4.jpg" />
+    <Content Include="Content\s\style2\images\art\p5-full.jpg" />
+    <Content Include="Content\s\style2\images\art\p5.jpg" />
+    <Content Include="Content\s\style2\images\art\p6-full.jpg" />
+    <Content Include="Content\s\style2\images\art\p6.jpg" />
+    <Content Include="Content\s\style2\images\art\p7-full.jpg" />
+    <Content Include="Content\s\style2\images\art\p7.jpg" />
+    <Content Include="Content\s\style2\images\art\p8-full.jpg" />
+    <Content Include="Content\s\style2\images\art\p8.jpg" />
+    <Content Include="Content\s\style2\images\art\p9-full.jpg" />
+    <Content Include="Content\s\style2\images\art\p9.jpg" />
+    <Content Include="Content\s\style2\images\art\parallax1.jpg" />
+    <Content Include="Content\s\style2\images\art\parallax2.jpg" />
+    <Content Include="Content\s\style2\images\art\parallax3.jpg" />
+    <Content Include="Content\s\style2\images\art\pp1-1.jpg" />
+    <Content Include="Content\s\style2\images\art\pp1-2.jpg" />
+    <Content Include="Content\s\style2\images\art\pp2-1.jpg" />
+    <Content Include="Content\s\style2\images\art\pp2-2.jpg" />
+    <Content Include="Content\s\style2\images\art\pp2-3.jpg" />
+    <Content Include="Content\s\style2\images\art\pp4-1.jpg" />
+    <Content Include="Content\s\style2\images\art\pp4-1th.jpg" />
+    <Content Include="Content\s\style2\images\art\pp4-2.jpg" />
+    <Content Include="Content\s\style2\images\art\pp4-2th.jpg" />
+    <Content Include="Content\s\style2\images\art\pp4-3.jpg" />
+    <Content Include="Content\s\style2\images\art\pp4-3th.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-bg1.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-bg10.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-bg11.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-bg12.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-bg2.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-bg3.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-bg4.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-bg5.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-bg6.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-bg7.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-bg8.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-bg9.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-th1.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-th10.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-th11.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-th12.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-th2.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-th3.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-th4.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-th5.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-th6.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-th7.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-th8.jpg" />
+    <Content Include="Content\s\style2\images\art\slider-th9.jpg" />
+    <Content Include="Content\s\style2\images\art\team1.jpg" />
+    <Content Include="Content\s\style2\images\art\team2.jpg" />
+    <Content Include="Content\s\style2\images\art\team3.jpg" />
+    <Content Include="Content\s\style2\images\art\u1.jpg" />
+    <Content Include="Content\s\style2\images\art\u2.jpg" />
+    <Content Include="Content\s\style2\images\art\u3.jpg" />
+    <Content Include="Content\s\style2\images\art\u4.jpg" />
+    <Content Include="Content\s\style2\images\blank.gif" />
+    <Content Include="Content\s\style2\images\closedhand.cur" />
+    <Content Include="Content\s\style2\images\favicon.png" />
+    <Content Include="Content\s\style2\images\icons\icon-arrows.png" />
+    <Content Include="Content\s\style2\images\icons\icon-bag.png" />
+    <Content Include="Content\s\style2\images\icons\icon-basket.png" />
+    <Content Include="Content\s\style2\images\icons\icon-board.png" />
+    <Content Include="Content\s\style2\images\icons\icon-book.png" />
+    <Content Include="Content\s\style2\images\icons\icon-box.png" />
+    <Content Include="Content\s\style2\images\icons\icon-browser.png" />
+    <Content Include="Content\s\style2\images\icons\icon-calculator.png" />
+    <Content Include="Content\s\style2\images\icons\icon-calendar.png" />
+    <Content Include="Content\s\style2\images\icons\icon-camera.png" />
+    <Content Include="Content\s\style2\images\icons\icon-card.png" />
+    <Content Include="Content\s\style2\images\icons\icon-clock.png" />
+    <Content Include="Content\s\style2\images\icons\icon-cloud.png" />
+    <Content Include="Content\s\style2\images\icons\icon-coffee.png" />
+    <Content Include="Content\s\style2\images\icons\icon-comment.png" />
+    <Content Include="Content\s\style2\images\icons\icon-compas.png" />
+    <Content Include="Content\s\style2\images\icons\icon-count.png" />
+    <Content Include="Content\s\style2\images\icons\icon-disk.png" />
+    <Content Include="Content\s\style2\images\icons\icon-diskette.png" />
+    <Content Include="Content\s\style2\images\icons\icon-download.png" />
+    <Content Include="Content\s\style2\images\icons\icon-drop.png" />
+    <Content Include="Content\s\style2\images\icons\icon-film.png" />
+    <Content Include="Content\s\style2\images\icons\icon-flag.png" />
+    <Content Include="Content\s\style2\images\icons\icon-graph.png" />
+    <Content Include="Content\s\style2\images\icons\icon-heart.png" />
+    <Content Include="Content\s\style2\images\icons\icon-help.png" />
+    <Content Include="Content\s\style2\images\icons\icon-home.png" />
+    <Content Include="Content\s\style2\images\icons\icon-iu.png" />
+    <Content Include="Content\s\style2\images\icons\icon-letter.png" />
+    <Content Include="Content\s\style2\images\icons\icon-lock.png" />
+    <Content Include="Content\s\style2\images\icons\icon-mail.png" />
+    <Content Include="Content\s\style2\images\icons\icon-money.png" />
+    <Content Include="Content\s\style2\images\icons\icon-music.png" />
+    <Content Include="Content\s\style2\images\icons\icon-news.png" />
+    <Content Include="Content\s\style2\images\icons\icon-notes.png" />
+    <Content Include="Content\s\style2\images\icons\icon-officephone.png" />
+    <Content Include="Content\s\style2\images\icons\icon-openmail.png" />
+    <Content Include="Content\s\style2\images\icons\icon-phone.png" />
+    <Content Include="Content\s\style2\images\icons\icon-phone2.png" />
+    <Content Include="Content\s\style2\images\icons\icon-photo.png" />
+    <Content Include="Content\s\style2\images\icons\icon-portfolio.png" />
+    <Content Include="Content\s\style2\images\icons\icon-print.png" />
+    <Content Include="Content\s\style2\images\icons\icon-radio.png" />
+    <Content Include="Content\s\style2\images\icons\icon-ribbon.png" />
+    <Content Include="Content\s\style2\images\icons\icon-safe.png" />
+    <Content Include="Content\s\style2\images\icons\icon-search.png" />
+    <Content Include="Content\s\style2\images\icons\icon-shop.png" />
+    <Content Include="Content\s\style2\images\icons\icon-statistics.png" />
+    <Content Include="Content\s\style2\images\icons\icon-tablet.png" />
+    <Content Include="Content\s\style2\images\icons\icon-ticket.png" />
+    <Content Include="Content\s\style2\images\icons\icon-truck.png" />
+    <Content Include="Content\s\style2\images\icons\icon-tv.png" />
+    <Content Include="Content\s\style2\images\icons\icon-upload.png" />
+    <Content Include="Content\s\style2\images\icons\icon-user.png" />
+    <Content Include="Content\s\style2\images\icons\icon-view.png" />
+    <Content Include="Content\s\style2\images\icons\icon-voicemail.png" />
+    <Content Include="Content\s\style2\images\icons\icon-wallet.png" />
+    <Content Include="Content\s\style2\images\icons\icon-weather.png" />
+    <Content Include="Content\s\style2\images\icons\icon-web.png" />
+    <Content Include="Content\s\style2\images\icons\icon-worldmap%402x.png" />
+    <Content Include="Content\s\style2\images\icons\icon-worldmap.png" />
+    <Content Include="Content\s\style2\images\logo.png" />
+    <Content Include="Content\s\style2\images\openhand.cur" />
+    <Content Include="Content\s\style2\js\bootstrap.min.js" />
+    <Content Include="Content\s\style2\js\fancybox\blank.gif" />
+    <Content Include="Content\s\style2\js\fancybox\fancybox_loading%402x.html" />
+    <Content Include="Content\s\style2\js\fancybox\fancybox_loading.html" />
+    <Content Include="Content\s\style2\js\fancybox\fancybox_overlay.png" />
+    <Content Include="Content\s\style2\js\fancybox\fancybox_sprite%402x.html" />
+    <Content Include="Content\s\style2\js\fancybox\fancybox_sprite.html" />
+    <Content Include="Content\s\style2\js\fancybox\helpers\jquery.fancybox-thumbs0ff5.css" />
+    <Content Include="Content\s\style2\js\fancybox\jquery.fancybox.css" />
+    <Content Include="Content\s\style2\js\google-code-prettify\prettify.css" />
+    <Content Include="Content\s\style2\js\jquery.min.js" />
+    <Content Include="Content\s\style2\js\jQuery2.1.3.js" />
+    <Content Include="Content\s\style2\js\plugins.js" />
+    <Content Include="Content\s\style2\js\scripts.js" />
+    <Content Include="Content\s\style2\type\bebas.css" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_bold-webfont.svg" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_book-webfont.svg" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_regular-webfont.svg" />
+    <Content Include="Content\s\style2\type\budicons.css" />
+    <Content Include="Content\s\style2\type\budicons\budicon.svg" />
+    <Content Include="Content\s\style2\type\fontello.css" />
+    <Content Include="Content\s\style2\type\fontello\fontello-circlee8cb.svg" />
+    <Content Include="Content\s\style2\type\fontello\fontello-social.svg" />
+    <Content Include="Content\s\style2\type\fontello\fontello.svg" />
+    <Content Include="Content\s\style.css" />
+    <Content Include="Content\s\YazarResim\hakkibulut.jpg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppClasses\CustomRolProvider.cs" />
+    <Compile Include="AppClasses\Settings.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\EtiketController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KategoriyaController.cs" />
+    <Compile Include="Controllers\KullaniciController.cs" />
+    <Compile Include="Controllers\MeqaleController.cs" />
+    <Compile Include="Controllers\YazarController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Context.cs" />
+    <Compile Include="Models\etiket.cs" />
+    <Compile Include="Models\kategoriya.cs" />
+    <Compile Include="Models\kullanici.cs" />
+    <Compile Include="Models\kullanicirol.cs" />
+    <Compile Include="Models\meqale.cs" />
+    <Compile Include="Models\resm.cs" />
+    <Compile Include="Models\Roll.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\yorum.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_bold-webfont.eot" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_bold-webfont.ttf" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_bold-webfont.woff" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_bold-webfont.woff2" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_bold-webfontd41d.eot" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_book-webfont.eot" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_book-webfont.ttf" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_book-webfont.woff" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_book-webfont.woff2" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_book-webfontd41d.eot" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_regular-webfont.eot" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_regular-webfont.ttf" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_regular-webfont.woff" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_regular-webfont.woff2" />
+    <Content Include="Content\s\style2\type\bebas\bebasneue_regular-webfontd41d.eot" />
+    <Content Include="Content\s\style2\type\budicons\budicon.eot" />
+    <Content Include="Content\s\style2\type\budicons\budicon.ttf" />
+    <Content Include="Content\s\style2\type\budicons\budicon.woff" />
+    <Content Include="Content\s\style2\type\budicons\budicond41d.eot" />
+    <Content Include="Content\s\style2\type\fontello\fontello-circlee8cb.eot" />
+    <Content Include="Content\s\style2\type\fontello\fontello-circlee8cb.ttf" />
+    <Content Include="Content\s\style2\type\fontello\fontello-circlee8cb.woff" />
+    <Content Include="Content\s\style2\type\fontello\fontello-social.eot" />
+    <Content Include="Content\s\style2\type\fontello\fontello-social.ttf" />
+    <Content Include="Content\s\style2\type\fontello\fontello-social.woff" />
+    <Content Include="Content\s\style2\type\fontello\fontello-sociald41d.eot" />
+    <Content Include="Content\s\style2\type\fontello\fontello.eot" />
+    <Content Include="Content\s\style2\type\fontello\fontello.ttf" />
+    <Content Include="Content\s\style2\type\fontello\fontello.woff" />
+    <Content Include="Content\s\style2\type\fontello\fontellod41d.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Views\Kategoriya\Kategoriyawidget.cshtml" />
+    <Content Include="Views\Etiket\Etiketlerwidget.cshtml" />
+    <Content Include="Views\Home\Populyarmeqaleler.cshtml" />
+    <Content Include="Views\Shared\Meqalelistelewidget.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="Views\Kategoriya\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Shared\Sitehaqqinda.cshtml" />
+    <Content Include="Views\Shared\Arama.cshtml" />
+    <Content Include="Views\Etiket\Index.cshtml" />
+    <Content Include="Views\Meqale\Detay.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Kullanici\Girisyap.cshtml" />
+    <Content Include="Views\Meqale\Meqaleekle.cshtml" />
+    <Content Include="Views\Kullanici\Uyeol.cshtml" />
+    <Content Include="Views\Yazar\Yazarol.cshtml" />
+    <Content Include="Views\Admin\Yazaronaylari.cshtml" />
+    <Content Include="Views\Meqale\Ekle.cshtml" />
+    <Content Include="Views\Shared\Yorumlistele.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\s\style\css\color\" />
+    <Folder Include="Content\s\style\css\images\" />
+    <Folder Include="Content\s\style\images\art\" />
+    <Folder Include="Content\s\style\js\fancybox\helpers\" />
+    <Folder Include="Content\s\style\js\google-code-prettify\" />
+    <Folder Include="Content\s\style\type\bebas\" />
+    <Folder Include="Content\s\style\type\budicons\" />
+    <Folder Include="Content\s\style\type\fontello\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54711</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54711/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
